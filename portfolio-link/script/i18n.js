@@ -4,6 +4,7 @@
    (contenu de l'élément) et data-i18n-attr="alt:cle;aria-label:cle" (attributs).
    Chaque langue a sa propre adresse (?lang=en), donc changer de langue recharge
    la page : les animations d'entrée se préparent une seule fois, sur le bon texte.
+   Les balises hreflang sont écrites en dur dans le <head> de chaque page.
    Ordre de priorité : ?lang= dans l'adresse, puis choix mémorisé, puis langue du
    navigateur, puis français. Ajouter une langue = l'ajouter à LANGUES et à TEXTES. */
 (function () {
@@ -214,18 +215,6 @@
     btn.setAttribute('aria-label', NOMS[cible]);
     btn.addEventListener('click', function () {
       try { localStorage.setItem('langue', cible); } catch (e) {}
-    });
-  }
-
-  /* Versions alternatives pour les moteurs de recherche (adresses absolues obligatoires) */
-  if (/^https?:$/.test(location.protocol)) {
-    var base = location.origin + location.pathname;
-    LANGUES.concat('x-default').forEach(function (l) {
-      var lien = document.createElement('link');
-      lien.rel = 'alternate';
-      lien.hreflang = l;
-      lien.href = l === 'x-default' ? base : base + '?lang=' + l;
-      document.head.appendChild(lien);
     });
   }
 })();
