@@ -61,9 +61,9 @@
       'parcours.bac.date': 'Since 2024-09',
       'parcours.bac.titre': 'Bachelor\'s in Computer and Electronic Systems',
       'parcours.bac.lieu': 'UQAM, Montréal, Canada. Third year, in progress.',
-      'parcours.cert.date': '[2023-MM]',
+      'parcours.cert.date': '2023-01 to 2023-11',
       'parcours.cert.titre': 'Certificate in Application Development',
-      'parcours.cert.lieu': '[Institution, country.]',
+      'parcours.cert.lieu': 'Powerbache Education, Cameroon.',
 
       'engagements.titre': 'Involvement',
       'engagements.sf.titre': 'Manager, Café Sain Fractal',
