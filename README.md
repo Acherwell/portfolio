@@ -1,89 +1,54 @@
-# Portfolio
+# Portfolio : site personnel bilingue
 
-Portfolio personnel, en français et en anglais. Site statique écrit à la main, sans framework ni étape de compilation.
+Portfolio personnel en français et en anglais, construit en HTML, CSS et JavaScript vanilla, sans framework ni étape de build.
 
-**En ligne :** [ADRESSE DU SITE]
+## Fonctionnalités
 
-*English version below.*
+- Bilingue français / anglais, avec une adresse par langue (`?lang=fr`, `?lang=en`) et des balises `hreflang` pour le référencement
+- Langue détectée à la première visite, puis choix mémorisé
+- Thème clair / sombre géré par variables CSS, choix mémorisé
+- Trajectoire SVG tracée au scroll et suivie d'une fusée, sections qui apparaissent à leur passage, fond en parallaxe
+- Astronaute 3D (three.js) chargé seulement à l'approche de la section contact, avec un repli en SVG
+- Respect du réglage système « réduire les animations », mise en page responsive
 
-## Ce qu'il y a dedans
+## Stack
 
-- **HTML, CSS et JavaScript purs.** Aucune dépendance au chargement de la page.
-- **Bilingue français / anglais.** Un dictionnaire unique (`script/i18n.js`) et des attributs `data-i18n` dans le HTML. Chaque langue a sa propre adresse (`?lang=fr`, `?lang=en`), annoncée aux moteurs de recherche par des balises `hreflang`. La langue est détectée au premier passage, puis le choix manuel est mémorisé.
-- **Thème clair et sombre.** Tout passe par des variables CSS, et le choix est mémorisé.
-- **Animation pilotée par le défilement.** Une trajectoire SVG se trace au fil de la page, suivie d'une fusée. Les sections apparaissent à leur passage, avec un fond en parallaxe.
-- **Astronaute en 3D (three.js).** three.js n'est téléchargé qu'à l'approche de la section contact. S'il est indisponible, un dessin SVG prend le relais. L'animation ne bloque jamais le défilement.
-- **Accessibilité.** L'option système « réduire les animations » est respectée, la navigation au clavier reste visible, et le site s'adapte aux petits écrans.
+- HTML, CSS, JavaScript vanilla
+- three.js (chargé à la demande)
+- Netlify
+
+## Lancer le projet
+
+```bash
+python -m http.server 8000 --directory portfolio-link
+```
+
+Ouvre http://localhost:8000 dans ton navigateur. Un serveur local est nécessaire : certaines fonctions du navigateur ne marchent pas en `file://`.
 
 ## Structure
 
-```
-portfolio-link/          le site publié
-  index.html
-  pages/                 une page par projet
-  script/
-    i18n.js              traductions et choix de la langue
-    theme.js             thème clair / sombre, décor
-    voyage.js            trajectoire et apparitions au défilement
-    finale3d.js          astronaute 3D du contact
-  style/style.css
-  images/
-netlify.toml             publication du dossier portfolio-link/
-```
+- `portfolio-link/index.html` : page principale
+- `portfolio-link/pages/` : une page par projet
+- `portfolio-link/script/i18n.js` : traductions et choix de la langue
+- `portfolio-link/script/theme.js` : thème clair / sombre et décor
+- `portfolio-link/script/voyage.js` : trajectoire et apparitions au scroll
+- `portfolio-link/script/finale3d.js` : astronaute 3D de la section contact
+- `portfolio-link/style/style.css` : styles et variables
+- `netlify.toml` : publie uniquement le dossier `portfolio-link/`
 
-## Lancer en local
+## Traductions
 
-Aucune installation n'est nécessaire. Il suffit d'un petit serveur, parce que certaines fonctions du navigateur ne marchent pas en `file://` :
-
-```bash
-python -m http.server 8000 --directory portfolio-link
-```
-
-Puis ouvrir http://localhost:8000.
-
-## Ajouter ou modifier un texte
-
-1. Dans le HTML, le texte français porte un attribut `data-i18n="cle"`.
-2. Dans `script/i18n.js`, la même clé contient le texte anglais.
-3. Pour un attribut (par exemple `alt`), utiliser `data-i18n-attr="alt:cle"`.
+Chaque texte visible porte un attribut `data-i18n="cle"` dans le HTML (version française) et la même clé dans `script/i18n.js` (version anglaise). Pour un attribut comme `alt`, on utilise `data-i18n-attr="alt:cle"`.
 
 ## Crédits
 
-- Polices : Abril Fatface, Fjalla One et JetBrains Mono (Google Fonts, licence SIL Open Font License).
-- [three.js](https://threejs.org), licence MIT.
+- Polices : Abril Fatface, Fjalla One, JetBrains Mono (Google Fonts, SIL Open Font License)
+- three.js : licence MIT
+
+## English
+
+Personal portfolio in French and English, built with vanilla HTML, CSS and JavaScript, with no framework and no build step. Features a scroll-driven SVG path, light and dark themes, a 3D astronaut loaded on demand, and one URL per language. Run it locally with the command above.
 
 ---
 
-# Portfolio (English)
-
-Personal portfolio in French and English. A static site written by hand, with no framework and no build step.
-
-**Live:** [SITE URL]
-
-## Features
-
-- **Plain HTML, CSS and JavaScript.** No dependency on page load.
-- **French / English.** A single dictionary (`script/i18n.js`) and `data-i18n` attributes in the HTML. Each language has its own URL (`?lang=fr`, `?lang=en`), declared to search engines with `hreflang` tags. The language is detected on the first visit, then the manual choice is remembered.
-- **Light and dark themes.** Everything goes through CSS variables, and the choice is remembered.
-- **Scroll-driven animation.** An SVG path draws itself down the page, followed by a rocket. Sections reveal as they come into view, over a parallax background.
-- **3D astronaut (three.js).** three.js is only downloaded as the visitor approaches the contact section. If it is unavailable, an SVG drawing takes over. The animation never blocks scrolling.
-- **Accessibility.** The system "reduce motion" setting is respected, keyboard focus stays visible, and the layout adapts to small screens.
-
-## Run locally
-
-No installation needed. A small server is enough, because some browser features do not work over `file://`:
-
-```bash
-python -m http.server 8000 --directory portfolio-link
-```
-
-Then open http://localhost:8000.
-
-## Credits
-
-- Fonts: Abril Fatface, Fjalla One and JetBrains Mono (Google Fonts, SIL Open Font License).
-- [three.js](https://threejs.org), MIT License.
-
----
-
-© 2026. Code and content: all rights reserved.
+© 2026 Abraham Nangue-Otom. Code et contenu : tous droits réservés.

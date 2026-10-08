@@ -54,7 +54,7 @@
       'projets.ach.desc': 'Personal AI assistant: voice, PC control, robotics.',
       'projets.ach.type': 'AI and robotics',
       'projets.aess.nom': 'AESS website',
-      'projets.aess.desc': 'Student association website, built as a volunteer.',
+      'projets.aess.desc': 'Website for the UQAM science students\' association, built as a volunteer.',
       'projets.aess.type': 'Website',
 
       'parcours.titre': 'Background',
@@ -99,7 +99,7 @@
 
       'aess.titre': 'AESS website, Abraham Nangue-Otom',
       'aess.h1': 'AESS website',
-      'aess.chapeau': 'Website for the student association, built as a volunteer.',
+      'aess.chapeau': 'Website for the Association étudiante du secteur des sciences de l\'UQAM (AESS), the science students\' association, built as a volunteer.',
       'aess.p1': 'A complete website for the AESS: an introduction to the association, news and resources for members. Designed so the executive team can publish without touching the code.',
       'aess.p2': 'I built an admin panel connected to a CMS, in French for the association\'s members, along with a dark mode. I also prepared and presented the project to the executive team before getting started.',
       'aess.meta': 'React, Vite, Tailwind CSS, Decap CMS.',
