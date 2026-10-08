@@ -2,7 +2,7 @@
 
 Portfolio personnel en français et en anglais, construit en HTML, CSS et JavaScript vanilla, sans framework ni étape de build.
 
-**En ligne** : https://portfolio-abraham-no.netlify.app/
+**En ligne** : https://abrahamnangue-otom.com/
 
 ## Fonctionnalités
 
@@ -49,7 +49,7 @@ Chaque texte visible porte un attribut `data-i18n="cle"` dans le HTML (version f
 
 ## English
 
-Personal portfolio in French and English, built with vanilla HTML, CSS and JavaScript, with no framework and no build step. Live at https://portfolio-abraham-no.netlify.app/. Features a scroll-driven SVG path, light and dark themes, a 3D astronaut loaded on demand, and one URL per language. Run it locally with the command above.
+Personal portfolio in French and English, built with vanilla HTML, CSS and JavaScript, with no framework and no build step. Live at https://abrahamnangue-otom.com/. Features a scroll-driven SVG path, light and dark themes, a 3D astronaut loaded on demand, and one URL per language. Run it locally with the command above.
 
 ---
 
