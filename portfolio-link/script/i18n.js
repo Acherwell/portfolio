@@ -70,7 +70,7 @@
       'projets.aess.type': 'Website',
 
       'parcours.titre': 'Background',
-      'parcours.bac.date': 'Since 2024-09',
+      'parcours.bac.date': 'Since 2024-01',
       'parcours.bac.titre': 'Bachelor\'s in Computer and Electronic Systems',
       'parcours.bac.lieu': 'UQAM, Montréal, Canada. Third year, in progress.',
       'parcours.cert.date': '2023-01 to 2023-11',
