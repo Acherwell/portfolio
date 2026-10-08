@@ -1,0 +1,400 @@
+:root {
+  --bg: #FFFFFF;
+  --fg: #16181D;
+  --doux: #474B57;
+  --ligne: #16181D;
+  --y: #F5B700;
+  --r: #D42A24;
+  --b: #1F5FE0;
+  --g: #1E9E52;
+  --halo: 0px;
+  --halo-cadre: none;
+  --etoiles: none;
+  --cta-bg: #16181D;
+  --cta-fg: #FFFFFF;
+  --cta-bord: #16181D;
+
+  --esp-1: 8px;
+  --esp-2: 16px;
+  --esp-3: 24px;
+  --esp-4: 48px;
+  --esp-section: 160px;
+  --largeur: 1100px;
+  --titre: 'Abril Fatface', Georgia, serif;
+  --texte: 'Fjalla One', 'Arial Narrow', sans-serif;
+  --mono: 'JetBrains Mono', 'Courier New', monospace;
+  --courbe: cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #07080F;
+    --fg: #F4F4F8;
+    --doux: #A9ABB8;
+    --ligne: #2A2D3A;
+    --y: #FFD60A;
+    --r: #FF5252;
+    --b: #5C96FF;
+    --g: #3DFF8B;
+    --halo: 7px;
+    --etoile-affichage: block;
+    --halo-cadre: 0 0 28px rgba(92, 150, 255, 0.55), inset 0 0 22px rgba(92, 150, 255, 0.18);
+    --etoiles: radial-gradient(1.5px 1.5px at 40px 60px, #F4F4F8 50%, transparent 51%), radial-gradient(1px 1px at 210px 150px, #A9ABB8 50%, transparent 51%), radial-gradient(1.5px 1.5px at 330px 40px, #5C96FF 50%, transparent 51%), radial-gradient(1px 1px at 120px 300px, #F4F4F8 50%, transparent 51%), radial-gradient(1px 1px at 380px 260px, #FFD60A 50%, transparent 51%);
+    --cta-bg: transparent;
+    --cta-fg: #5C96FF;
+    --cta-bord: #5C96FF;
+  }
+}
+
+:root[data-theme="dark"] {
+  --bg: #07080F;
+  --fg: #F4F4F8;
+  --doux: #A9ABB8;
+  --ligne: #2A2D3A;
+  --y: #FFD60A;
+  --r: #FF5252;
+  --b: #5C96FF;
+  --g: #3DFF8B;
+  --halo: 7px;
+  --etoile-affichage: block;
+  --halo-cadre: 0 0 28px rgba(92, 150, 255, 0.55), inset 0 0 22px rgba(92, 150, 255, 0.18);
+  --etoiles: radial-gradient(1.5px 1.5px at 40px 60px, #F4F4F8 50%, transparent 51%), radial-gradient(1px 1px at 210px 150px, #A9ABB8 50%, transparent 51%), radial-gradient(1.5px 1.5px at 330px 40px, #5C96FF 50%, transparent 51%), radial-gradient(1px 1px at 120px 300px, #F4F4F8 50%, transparent 51%), radial-gradient(1px 1px at 380px 260px, #FFD60A 50%, transparent 51%);
+  --cta-bg: transparent;
+  --cta-fg: #5C96FF;
+  --cta-bord: #5C96FF;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background-color: var(--bg);
+  background-image: var(--etoiles);
+  background-size: 420px 340px;
+  color: var(--fg);
+  font-family: var(--texte);
+  font-size: 19px;
+  line-height: 1.7;
+  letter-spacing: 0.012em;
+  transition: background-color 0.4s, color 0.4s;
+}
+a { color: inherit; }
+:focus-visible { outline: 3px solid var(--b); outline-offset: 3px; }
+
+/* Nav */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  height: 72px;
+  padding: 0 var(--esp-4);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--bg);
+  border-bottom: 2px solid var(--ligne);
+  transition: background-color 0.4s;
+}
+.nav-logo { font-family: var(--titre); font-size: 24px; text-decoration: none; }
+.nav-logo span { color: var(--r); }
+.nav-liens { margin-left: auto; margin-right: 28px; display: flex; align-items: center; gap: 28px; font-family: var(--mono); font-size: 14px; }
+.nav-liens a { text-decoration: none; padding: 12px 0; }
+.nav-liens a:hover { color: var(--b); }
+.btn-theme, .btn-langue {
+  min-height: 44px;
+  padding: 0 var(--esp-2);
+  background: transparent;
+  color: var(--fg);
+  border: 2px solid var(--fg);
+  font-family: var(--mono);
+  font-size: 13px;
+  white-space: nowrap;
+  cursor: pointer;
+}
+.btn-langue { display: inline-flex; align-items: center; justify-content: center; min-width: 44px; margin-right: 8px; text-decoration: none; }
+.btn-theme:hover, .btn-langue:hover { background: var(--fg); color: var(--bg); }
+
+/* Voyage : la carte SVG passe derriere les etapes */
+.voyage { position: relative; overflow: hidden; }
+#carte { position: absolute; left: 0; top: 0; z-index: 0; pointer-events: none; }
+.trace {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 4;
+  stroke-linecap: round;
+  filter: drop-shadow(0 0 var(--halo) currentColor);
+}
+.station { fill: var(--bg); stroke: currentColor; stroke-width: 4; opacity: 0; transition: opacity 0.4s; }
+.station.vu { opacity: 1; }
+#vaisseau { filter: drop-shadow(0 0 var(--halo) var(--b)); }
+#vaisseau .coque { fill: var(--bg); stroke: var(--fg); stroke-width: 2.5; stroke-linejoin: round; }
+#vaisseau .nez, #vaisseau .aileron { fill: var(--r); stroke: var(--fg); stroke-width: 2.5; stroke-linejoin: round; }
+#vaisseau .hublot { fill: var(--b); stroke: var(--fg); stroke-width: 2.5; }
+#vaisseau .bande { stroke: var(--g); stroke-width: 3; }
+#vaisseau .flamme { transform-box: fill-box; transform-origin: right center; transform: scaleX(0.45); transition: transform 0.25s; }
+#vaisseau.propulse .flamme { transform: scaleX(1.25); }
+#vaisseau .feu { transform-box: fill-box; transform-origin: right center; animation: vacille 0.18s infinite alternate; }
+#vaisseau .feu-ext { fill: var(--y); }
+#vaisseau .feu-int { fill: var(--r); }
+@keyframes vacille { from { transform: scale(1, 1); } to { transform: scale(0.82, 0.8); } }
+
+/* Decor : formes qui flottent, etoiles qui scintillent en sombre */
+.decor { position: fixed; inset: 0; z-index: -1; pointer-events: none; overflow: hidden; perspective: 600px; }
+.couche { position: absolute; inset: -12% 0; will-change: transform; }
+.couche.loin { filter: blur(0.2px); }
+.forme { position: absolute; width: 18px; height: 18px; border: 3px solid currentColor; opacity: 0.55; box-shadow: 0 0 calc(var(--halo) * 2) currentColor; animation: flotte 16s ease-in-out infinite alternate; }
+.forme.rond { border-radius: 50%; }
+.forme.plein { background: currentColor; width: 10px; height: 10px; }
+.etoile { position: absolute; width: 3px; height: 3px; border-radius: 50%; background: var(--fg); opacity: 0; animation: scintille 3s ease-in-out infinite alternate; display: var(--etoile-affichage, none); }
+.filante { position: absolute; top: 12%; left: -10%; width: 120px; height: 2px; background: linear-gradient(90deg, transparent, var(--fg)); opacity: 0; transform: rotate(18deg); animation: filante 11s linear infinite; display: var(--etoile-affichage, none); }
+@keyframes flotte { from { transform: translate(0, 0) rotate(0deg); } to { transform: translate(34px, -46px) rotate(140deg); } }
+@keyframes scintille { from { opacity: 0.1; } to { opacity: 0.9; } }
+@keyframes filante { 0% { transform: translate(0, 0) rotate(18deg); opacity: 0; } 4% { opacity: 0.9; } 12% { transform: translate(130vw, 42vw) rotate(18deg); opacity: 0; } 100% { transform: translate(130vw, 42vw) rotate(18deg); opacity: 0; } }
+
+.voyage { perspective: 1000px; }
+.etape { position: relative; z-index: 1; transform-style: preserve-3d; padding: var(--esp-section) 0; }
+.contenu { max-width: var(--largeur); margin: 0 auto; padding: 0 var(--esp-4); }
+
+/* Fondu a l'arrivee du vaisseau (seulement si le JS tourne) */
+.js .anim {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.7s var(--courbe), transform 0.7s var(--courbe);
+  transition-delay: var(--d, 0s);
+}
+.js .etape.vu .anim { opacity: 1; transform: none; }
+
+/* Titres : la ligne monte depuis un masque */
+.masque { display: block; overflow: hidden; padding-bottom: 0.1em; }
+.js .masque .ligne { display: block; transform: translateY(110%); transition: transform 0.9s var(--courbe); transition-delay: var(--d, 0s); }
+.js .etape.vu .masque .ligne { transform: none; }
+
+/* Petit trait de couleur qui se trace sous chaque h2 */
+h2::after {
+  content: "";
+  display: block;
+  width: 64px;
+  height: 5px;
+  margin-top: 14px;
+  background: var(--teinte, var(--fg));
+  box-shadow: 0 0 calc(var(--halo) * 2) var(--teinte, transparent);
+  transform-origin: left center;
+}
+.js h2::after { transform: scaleX(0); transition: transform 0.7s var(--courbe) 0.35s; }
+.js .etape.vu h2::after { transform: none; }
+
+/* Photo : le cadre se devoile de haut en bas, puis le bloc jaune glisse derriere */
+.photo-cadre { will-change: transform; }
+.js .photo-cadre { clip-path: inset(-40px -40px 100% -40px); transition: clip-path 1s var(--courbe) 0.3s; }
+.js .etape.vu .photo-cadre { clip-path: inset(-40px -40px -40px -40px); }
+.js .photo::before { opacity: 0; transform: translate(-20px, -20px); transition: opacity 0.6s ease 0.9s, transform 0.6s var(--courbe) 0.9s; }
+.js .etape.vu .photo::before { opacity: 1; transform: none; }
+
+#apropos { --teinte: var(--r); }
+#projets { --teinte: var(--b); }
+#parcours { --teinte: var(--g); }
+#engagements { --teinte: var(--y); }
+#contact { --teinte: var(--y); }
+
+h1, h2 { font-family: var(--titre); font-weight: 400; margin: 0; line-height: 1.05; letter-spacing: -0.005em; }
+h1 { font-size: 78px; }
+h2 { font-size: 52px; margin-bottom: var(--esp-4); }
+p { margin: 0; color: var(--doux); max-width: 58ch; font-weight: 400; }
+
+/* Accueil */
+.hero { padding-top: 96px; min-height: calc(100vh - 72px); display: flex; align-items: center; }
+.hero .contenu { width: 100%; display: grid; grid-template-columns: minmax(0, 1fr) 380px; gap: 72px; align-items: center; }
+.hero-texte { display: flex; flex-direction: column; gap: var(--esp-3); }
+.hero-texte p { font-size: 20px; }
+.actions { display: flex; gap: var(--esp-2); flex-wrap: wrap; margin-top: var(--esp-1); }
+.btn {
+  min-height: 48px;
+  padding: 0 var(--esp-3);
+  display: inline-flex;
+  align-items: center;
+  font-weight: 400;
+  font-size: 17px;
+  letter-spacing: 0.03em;
+  text-decoration: none;
+  border: 2px solid var(--fg);
+}
+.btn-plein { background: var(--cta-bg); color: var(--cta-fg); border-color: var(--cta-bord); box-shadow: var(--halo-cadre); }
+.btn:hover { background: var(--b); border-color: var(--b); color: #FFFFFF; }
+
+.photo { position: relative; width: 100%; max-width: 380px; aspect-ratio: 4 / 5; }
+.photo::before {
+  content: "";
+  position: absolute;
+  inset: 20px -20px -20px 20px;
+  background: var(--y);
+}
+.photo-cadre {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border: 3px solid var(--fg);
+  background: var(--bg);
+  box-shadow: var(--halo-cadre);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--esp-1);
+  font-family: var(--mono);
+  font-size: 14px;
+  color: var(--doux);
+  overflow: hidden;
+}
+.photo-cadre img { width: 100%; height: 100%; object-fit: cover; }
+
+/* Projets */
+.projets { list-style: none; margin: 0; padding: 0; }
+.projets li { border-top: 2px solid var(--ligne); }
+.projets li:last-child { border-bottom: 2px solid var(--ligne); }
+.projets a {
+  display: grid;
+  grid-template-columns: 20px 300px minmax(0, 1fr) auto;
+  gap: var(--esp-3);
+  align-items: center;
+  padding: var(--esp-3) 0;
+  text-decoration: none;
+  transition: padding-left 0.25s;
+}
+.projets a:hover { padding-left: var(--esp-2); }
+.carre { width: 20px; height: 20px; box-shadow: 0 0 calc(var(--halo) * 2) currentColor; background: currentColor; }
+.projet-nom { font-family: var(--titre); font-size: 28px; font-weight: 400; line-height: 1.15; }
+.projet-desc { color: var(--doux); }
+.projet-type { font-family: var(--mono); font-size: 13px; color: var(--doux); }
+
+/* Parcours */
+.parcours { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: var(--esp-4); }
+.parcours li { display: grid; grid-template-columns: 160px minmax(0, 1fr); gap: var(--esp-3); }
+.parcours-date { font-family: var(--mono); font-size: 14px; color: var(--doux); padding-top: 6px; }
+.parcours-titre { font-size: 24px; font-weight: 400; letter-spacing: 0.01em; line-height: 1.25; color: var(--fg); }
+
+/* Engagements */
+.engagements { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--esp-4); }
+.engagements li { border-left: 4px solid var(--teinte, var(--fg)); padding-left: var(--esp-3); }
+.engagement-titre { font-family: var(--titre); font-size: 22px; line-height: 1.2; margin-bottom: var(--esp-1); }
+
+/* L'astronaute du contact : en 3D si possible (finale3d.js), sinon ce dessin SVG */
+.bonhomme { display: block; width: 100%; height: 100%; overflow: visible; }
+.bonhomme .corps { fill: var(--y); stroke: var(--fg); stroke-width: 3.5; stroke-linejoin: round; }
+.bonhomme .casque { fill: var(--bg); stroke: var(--fg); stroke-width: 3.5; }
+.bonhomme .visiere { fill: var(--b); stroke: var(--fg); stroke-width: 3.5; }
+.bonhomme .reflet { fill: var(--bg); opacity: 0.4; }
+.bonhomme .oeil { fill: var(--bg); }
+.bonhomme .joue { fill: var(--r); opacity: 0.7; }
+.bonhomme .sourire { fill: none; stroke: var(--bg); stroke-width: 2.2; stroke-linecap: round; }
+.bonhomme .membre, .bonhomme .antenne { fill: none; stroke: var(--fg); stroke-width: 6.5; stroke-linecap: round; }
+.bonhomme .bout { fill: var(--g); stroke: var(--fg); stroke-width: 3.5; stroke-linejoin: round; }
+.bonhomme .perle { fill: var(--r); stroke: var(--fg); stroke-width: 3; }
+.bonhomme .ombre { fill: var(--fg); opacity: 0.1; }
+
+.bonhomme-ancre { position: relative; width: 150px; height: 200px; margin: var(--esp-3) 0 0 0; visibility: hidden; }
+.bonhomme-ancre.arrive, .bonhomme-ancre.pose3d { visibility: visible; }
+/* Repli 2D : arrivee en diagonale avec un leger depassement, puis flottement */
+.bonhomme-ancre.arrive .bonhomme { animation: arrivee 1.3s cubic-bezier(0.22, 1.3, 0.4, 1) both, respire 3.4s 1.3s ease-in-out infinite alternate; }
+.bonhomme-ancre.pose3d .bonhomme { display: none; }
+/* La toile deborde de la boite : l'astronaute arrive de plus loin sans etre coupe net */
+.bonhomme-ancre canvas { position: absolute; left: -50%; top: -50%; width: 200%; height: 200%; pointer-events: none; }
+@keyframes arrivee {
+  from { transform: translate(160px, 110px) rotate(22deg); opacity: 0; }
+  25%  { opacity: 1; }
+  to   { transform: none; }
+}
+@keyframes respire {
+  from { transform: translateY(0) rotate(-1.5deg); }
+  to   { transform: translateY(-12px) rotate(1.5deg); }
+}
+
+/* Contact */
+#contact { min-height: 90vh; }
+.contact-liens { display: flex; flex-direction: column; gap: var(--esp-2); margin-top: var(--esp-4); font-family: var(--titre); font-size: 32px; }
+.contact-liens a { text-decoration-thickness: 3px; text-underline-offset: 6px; }
+.contact-liens a:hover { color: var(--g); }
+
+footer {
+  position: relative;
+  z-index: 1;
+  padding: var(--esp-3) var(--esp-4);
+  border-top: 2px solid var(--ligne);
+  display: flex;
+  justify-content: space-between;
+  gap: var(--esp-2);
+  flex-wrap: wrap;
+  font-family: var(--mono);
+  font-size: 13px;
+  color: var(--doux);
+}
+
+/* Desktop d'abord, puis on descend */
+@media (max-width: 960px) {
+  :root { --esp-section: 130px; --esp-4: 40px; }
+  h1 { font-size: 60px; }
+  h2 { font-size: 40px; }
+  .hero .contenu { grid-template-columns: minmax(0, 1fr); gap: 56px; }
+  .photo { max-width: 300px; }
+  .projets a { grid-template-columns: 20px minmax(0, 1fr); }
+  .projet-desc, .projet-type { grid-column: 2; }
+  .parcours li { grid-template-columns: minmax(0, 1fr); gap: var(--esp-1); }
+}
+@media (max-width: 600px) {
+  .bonhomme-ancre { width: 96px; height: 133px; }
+  :root { --esp-section: 100px; --esp-4: 32px; }
+  body { font-size: 17px; line-height: 1.72; }
+  h1 { font-size: 38px; line-height: 1.08; }
+  h2 { font-size: 30px; margin-bottom: var(--esp-3); }
+  .hero { padding-top: 56px; }
+  .hero-texte p { font-size: 18px; }
+  .nav { height: auto; padding: 10px var(--esp-3); flex-wrap: wrap; row-gap: 2px; border-bottom-width: 1px; }
+  .nav-logo { font-size: 19px; }
+  .nav-liens { order: 3; width: 100%; margin: 0; justify-content: space-between; gap: 8px; font-size: 12px; }
+  .btn-theme, .btn-langue { border-width: 1px; font-size: 12px; }
+  .btn-langue { margin-left: auto; }
+  .btn { border-width: 1px; font-size: 15px; }
+  .photo { max-width: 240px; }
+  .photo::before { inset: 12px -12px -12px 12px; }
+  .photo-cadre { border-width: 2px; }
+  .projets li, .projets li:last-child { border-width: 1px; }
+  .projets a { padding: 20px 0; gap: 6px 16px; grid-template-columns: 14px minmax(0, 1fr); }
+  .carre { width: 14px; height: 14px; }
+  .projet-nom { font-size: 21px; }
+  .projet-desc { font-size: 15px; }
+  .parcours { gap: 36px; }
+  .engagements { grid-template-columns: minmax(0, 1fr); gap: var(--esp-3); }
+  .engagement-titre { font-size: 19px; }
+  .parcours-titre { font-size: 18px; }
+  .contact-liens { font-size: 20px; overflow-wrap: anywhere; }
+  .contact-liens a { text-decoration-thickness: 2px; }
+  .trace { stroke-width: 3; }
+  .forme { opacity: 0.35; }
+  footer { border-top-width: 1px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .js .anim, .js .masque .ligne, .js h2::after, .js .photo::before { opacity: 1; transform: none; transition: none; }
+  .photo-cadre { will-change: transform; }
+.js .photo-cadre { clip-path: none; transition: none; }
+  .forme, .etoile, .filante, #vaisseau .feu { animation: none; }
+  .relief { transform: none !important; transition: none; }
+  .bonhomme-ancre.arrive .bonhomme { animation: none; }
+  .etoile { opacity: 0.6; }
+}
+
+/* Pages internes (pages/) */
+.page { padding: 96px 0 var(--esp-section); }
+.page h1 { font-size: 58px; margin-bottom: var(--esp-3); }
+.page .retour { display: inline-block; margin-bottom: var(--esp-4); font-family: var(--mono); font-size: 14px; }
+.page-image { margin: var(--esp-4) 0; border: 3px solid var(--fg); box-shadow: var(--halo-cadre); aspect-ratio: 16 / 9; display: flex; align-items: center; justify-content: center; font-family: var(--mono); font-size: 14px; color: var(--doux); }
+
+.chapeau { font-size: 21px; color: var(--fg); margin-bottom: var(--esp-2); }
+.page p { margin-bottom: var(--esp-3); }
+.page .meta { font-family: var(--mono); font-size: 14px; color: var(--doux); border-top: 2px solid var(--ligne); padding-top: var(--esp-3); margin-top: var(--esp-4); }
+.page .meta a { color: var(--teinte, var(--b)); }
+@media (max-width: 600px) {
+  .page h1 { font-size: 34px; }
+  .chapeau { font-size: 18px; }
+}
+.engagement-date { display: block; font-family: var(--mono); font-size: 14px; color: var(--doux); margin-bottom: 6px; }

@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title data-i18n="ach.titre">Acherwell, [Prénom Nom]</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Fjalla+One&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style/style.css">
+</head>
+<body>
+
+<div class="decor" id="decor" aria-hidden="true"></div>
+
+<nav class="nav" aria-label="Navigation principale" data-i18n-attr="aria-label:nav.aria">
+  <a class="nav-logo" href="../index.html">link<span>.</span>dev</a>
+  <div class="nav-liens">
+    <a href="../index.html#apropos" data-i18n="nav.apropos">/apropos</a>
+    <a href="../index.html#projets" data-i18n="nav.projets">/projets</a>
+    <a href="../index.html#parcours" data-i18n="nav.parcours">/parcours</a>
+    <a href="../index.html#contact" data-i18n="nav.contact">/contact</a>
+  </div>
+  <a class="btn-langue" id="btn-langue" href="?lang=en" hreflang="en" lang="en" aria-label="English version">EN</a>
+  <button class="btn-theme" id="btn-theme" type="button">Mode sombre</button>
+</nav>
+
+<main class="page">
+  <div class="contenu">
+    <a class="retour" href="../index.html#projets" data-i18n="page.retour">Retour aux projets</a>
+    <h1>Acherwell</h1>
+    <p class="chapeau" data-i18n="ach.chapeau">Assistant IA personnel monté de zéro.</p>
+    <div class="page-image" data-i18n="ach.capture">Capture ici : images/acherwell.jpg, format 16:9</div>
+    <p data-i18n="ach.p1">[Deux ou trois phrases : ce que fait Acherwell, pourquoi tu l'as commencé.]</p>
+    <p data-i18n="ach.p2">[Les parties du système : voix, contrôle du PC, robotique. Ce qui marche déjà, ce qui est en chantier.]</p>
+    <p class="meta" data-i18n="ach.meta">[Technos utilisées.]</p>
+  </div>
+</main>
+
+<footer>
+  <span data-i18n="pied.copyright">© 2026 [Prénom Nom], Montréal, Canada</span>
+  <span data-i18n="pied.fait">Fait main en HTML, CSS et JavaScript</span>
+</footer>
+
+<script src="../script/i18n.js"></script>
+<script src="../script/theme.js"></script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title data-i18n="sf.titre">Café Sain Fractal, [Prénom Nom]</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Fjalla+One&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style/style.css">
+</head>
+<body>
+
+<div class="decor" id="decor" aria-hidden="true"></div>
+
+<nav class="nav" aria-label="Navigation principale" data-i18n-attr="aria-label:nav.aria">
+  <a class="nav-logo" href="../index.html">link<span>.</span>dev</a>
+  <div class="nav-liens">
+    <a href="../index.html#apropos" data-i18n="nav.apropos">/apropos</a>
+    <a href="../index.html#projets" data-i18n="nav.projets">/projets</a>
+    <a href="../index.html#parcours" data-i18n="nav.parcours">/parcours</a>
+    <a href="../index.html#contact" data-i18n="nav.contact">/contact</a>
+  </div>
+  <a class="btn-langue" id="btn-langue" href="?lang=en" hreflang="en" lang="en" aria-label="English version">EN</a>
+  <button class="btn-theme" id="btn-theme" type="button">Mode sombre</button>
+</nav>
+
+<main class="page">
+  <div class="contenu">
+    <a class="retour" href="../index.html#projets" data-i18n="page.retour">Retour aux projets</a>
+    <h1>Café Sain Fractal</h1>
+    <p class="chapeau" data-i18n="sf.chapeau">Site web du café, en ligne et utilisé au quotidien.</p>
+    <div class="page-image" data-i18n="sf.capture">Capture ici : images/sain-fractal.jpg, format 16:9</div>
+    <p data-i18n="sf.p1">Site vitrine du Café Sain Fractal, dont je suis responsable : présentation du lieu, catégories de produits et annonce des événements, avec expiration automatique des événements passés.</p>
+    <p data-i18n="sf.p2">J'y ai branché un formulaire de contact, la base de données pour le contenu, et le référencement : balises Open Graph, métadonnées et vérification Google Search Console.</p>
+    <p class="meta"><span data-i18n="sf.meta">HTML, CSS, JavaScript, Supabase, déployé sur Netlify.</span> <a href="https://sainfractal.netlify.app/">sainfractal.netlify.app</a></p>
+  </div>
+</main>
+
+<footer>
+  <span data-i18n="pied.copyright">© 2026 [Prénom Nom], Montréal, Canada</span>
+  <span data-i18n="pied.fait">Fait main en HTML, CSS et JavaScript</span>
+</footer>
+
+<script src="../script/i18n.js"></script>
+<script src="../script/theme.js"></script>
+</body>
+</html>

@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title data-i18n="accueil.titre">[Prénom Nom], portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Fjalla+One&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style/style.css">
+</head>
+<body>
+
+<div class="decor" id="decor" aria-hidden="true"></div>
+
+<nav class="nav" aria-label="Navigation principale" data-i18n-attr="aria-label:nav.aria">
+  <a class="nav-logo" href="#accueil">link<span>.</span>dev</a>
+  <div class="nav-liens">
+    <a href="#apropos" data-i18n="nav.apropos">/apropos</a>
+    <a href="#projets" data-i18n="nav.projets">/projets</a>
+    <a href="#parcours" data-i18n="nav.parcours">/parcours</a>
+    <a href="#engagements" data-i18n="nav.engagements">/engagements</a>
+    <a href="#contact" data-i18n="nav.contact">/contact</a>
+  </div>
+  <a class="btn-langue" id="btn-langue" href="?lang=en" hreflang="en" lang="en" aria-label="English version">EN</a>
+  <button class="btn-theme" id="btn-theme" type="button">Mode sombre</button>
+</nav>
+
+<div class="voyage" id="voyage">
+  <svg id="carte" aria-hidden="true">
+    <g id="traces"></g>
+    <g id="stations"></g>
+    <g id="vaisseau">
+      <g class="flamme"><g class="feu">
+        <path class="feu-ext" d="M-22 0 C-28 -8 -40 -5 -50 0 C-40 5 -28 8 -22 0 Z"></path>
+        <path class="feu-int" d="M-22 0 C-26 -4 -32 -3 -38 0 C-32 3 -26 4 -22 0 Z"></path>
+      </g></g>
+      <path class="aileron" d="M-8 -9 L-26 -22 L-22 -8 Z"></path>
+      <path class="aileron" d="M-8 9 L-26 22 L-22 8 Z"></path>
+      <path class="coque" d="M28 0 C20 -12 -2 -14 -22 -9 L-22 9 C-2 14 20 12 28 0 Z"></path>
+      <path class="nez" d="M28 0 C24 -6 19 -9.5 13 -11.5 L13 11.5 C19 9.5 24 6 28 0 Z"></path>
+      <path class="bande" d="M-14 -10.5 V10.5"></path>
+      <circle class="hublot" cx="1" cy="0" r="5.5"></circle>
+    </g>
+  </svg>
+
+  <header class="etape hero" id="accueil">
+    <div class="contenu">
+      <div class="hero-texte">
+        <h1 data-i18n="hero.titre">Du circuit<br>au pixel.</h1>
+        <p data-i18n="hero.texte">Je suis [Prénom Nom]. Étudiant en systèmes informatiques et électroniques à l'UQAM, je construis des sites, des jeux et un assistant IA monté de zéro.</p>
+        <div class="actions">
+          <a class="btn btn-plein" href="#projets" data-i18n="hero.voir">Voir les projets</a>
+          <a class="btn" href="#contact" data-i18n="hero.contact">Me contacter</a>
+        </div>
+      </div>
+      <div class="photo">
+        <div class="photo-cadre">
+          <!-- Remplacer ces deux lignes par : <img src="images/link.jpg" alt="Portrait de [Prénom Nom]" data-i18n-attr="alt:photo.alt"> -->
+          <span data-i18n="photo.ici">Ta photo ici</span>
+          <span data-i18n="photo.format">images/link.jpg, format 4:5</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="etape" id="apropos">
+    <div class="contenu">
+      <h2 data-i18n="apropos.titre">À propos</h2>
+      <p data-i18n="apropos.texte">Troisième année au BAC en systèmes informatiques et électroniques à l'UQAM, à Montréal, Canada. Responsable du Café Sain Fractal.</p>
+      <p style="margin-top: 24px;" data-i18n="apropos.perso">[Deux ou trois phrases à toi : ce qui te motive, ce que tu cherches, ce que tu aimes construire.]</p>
+    </div>
+  </section>
+
+  <section class="etape" id="projets">
+    <div class="contenu">
+      <h2 data-i18n="projets.titre">Projets</h2>
+      <ul class="projets">
+        <li><a href="pages/jeu.html"><span class="carre" style="color: var(--y);"></span><span class="projet-nom" data-i18n="projets.jeu.nom">Développement de jeu vidéo</span><span class="projet-desc" data-i18n="projets.jeu.desc">Jeu de stratégie en 2D, moteur de simulation développé sous Godot.</span><span class="projet-type" data-i18n="projets.jeu.type">Projet personnel</span></a></li>
+        <li><a href="pages/sain-fractal.html"><span class="carre" style="color: var(--r);"></span><span class="projet-nom">Café Sain Fractal</span><span class="projet-desc" data-i18n="projets.sf.desc">Site du café, en ligne et utilisé au quotidien.</span><span class="projet-type" data-i18n="projets.sf.type">Site web</span></a></li>
+        <li><a href="pages/acherwell.html"><span class="carre" style="color: var(--b);"></span><span class="projet-nom">Acherwell</span><span class="projet-desc" data-i18n="projets.ach.desc">Assistant IA personnel : voix, contrôle du PC, robotique.</span><span class="projet-type" data-i18n="projets.ach.type">IA et robotique</span></a></li>
+        <li><a href="pages/aess.html"><span class="carre" style="color: var(--g);"></span><span class="projet-nom" data-i18n="projets.aess.nom">Site de l'AESS</span><span class="projet-desc" data-i18n="projets.aess.desc">Site de l'association étudiante, réalisé bénévolement.</span><span class="projet-type" data-i18n="projets.aess.type">Site web</span></a></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="etape" id="parcours">
+    <div class="contenu">
+      <h2 data-i18n="parcours.titre">Parcours</h2>
+      <ul class="parcours">
+        <li><span class="parcours-date" data-i18n="parcours.bac.date">Depuis [AAAA-MM]</span><div><div class="parcours-titre" data-i18n="parcours.bac.titre">BAC en systèmes informatiques et électroniques</div><p data-i18n="parcours.bac.lieu">UQAM, Montréal, Canada. Troisième année, en cours.</p></div></li>
+        <li><span class="parcours-date" data-i18n="parcours.cert.date">[2023-MM]</span><div><div class="parcours-titre" data-i18n="parcours.cert.titre">Certificat en développement d'applications</div><p data-i18n="parcours.cert.lieu">[Établissement, pays.]</p></div></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="etape" id="engagements">
+    <div class="contenu">
+      <h2 data-i18n="engagements.titre">Engagements</h2>
+      <ul class="engagements">
+        <li><span class="engagement-date" data-i18n="engagements.sf.date">Depuis [AAAA-MM]</span><div class="engagement-titre" data-i18n="engagements.sf.titre">Responsable, Café Sain Fractal</div><p data-i18n="engagements.sf.texte">[Ce que tu y gères, en une phrase.]</p></li>
+        <li><span class="engagement-date" data-i18n="engagements.aess.date">Depuis [AAAA-MM]</span><div class="engagement-titre" data-i18n="engagements.aess.titre">Bénévole, AESS (association étudiante)</div><p data-i18n="engagements.aess.texte">[Ton rôle, en une phrase.]</p></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="etape" id="contact">
+    <div class="contenu">
+      <h2 data-i18n="contact.titre">Fin du voyage. On se parle ?</h2>
+      <p data-i18n="contact.texte">Un projet, un stage, une question : écris-moi.</p>
+      <div class="contact-liens">
+        <a href="#" data-i18n="contact.courriel">[TON COURRIEL]</a>
+        <a href="https://github.com/Acherwell" data-i18n="contact.github">GitHub : Acherwell</a>
+      </div>
+      <div class="bonhomme-ancre" id="bonhomme-ancre" aria-hidden="true">
+        <svg class="bonhomme" viewBox="-6 -52 72 100" aria-hidden="true">
+          <ellipse class="ombre" cx="29" cy="40" rx="20" ry="4"></ellipse>
+          <path class="membre" d="M22 16 C16 24 14 29 16 33"></path>
+          <path class="membre" d="M36 16 C42 24 44 29 42 33"></path>
+          <path class="bout" d="M16 33 C9 33 7 36 8 38 L22 38 C24 36 23 33 16 33 Z"></path>
+          <path class="bout" d="M42 33 C49 33 51 36 50 38 L36 38 C34 36 35 33 42 33 Z"></path>
+          <path class="corps" d="M29 -16 C45 -16 52 -6 52 6 C52 16 43 20 29 20 C15 20 6 16 6 6 C6 -6 13 -16 29 -16 Z"></path>
+          <path class="membre" d="M48 -2 C56 2 58 8 52 11"></path>
+          <path class="membre" d="M10 -2 C2 2 0 8 6 11"></path>
+          <circle class="bout" cx="52" cy="11" r="5.5"></circle>
+          <circle class="bout" cx="6" cy="11" r="5.5"></circle>
+          <path class="casque" d="M29 -44 C43 -44 52 -35 52 -23 C52 -12 43 -6 29 -6 C15 -6 6 -12 6 -23 C6 -35 15 -44 29 -44 Z"></path>
+          <path class="visiere" d="M29 -38 C40 -38 47 -31 47 -22 C47 -15 40 -10 29 -10 C18 -10 11 -15 11 -22 C11 -31 18 -38 29 -38 Z"></path>
+          <path class="reflet" d="M19 -31 C23 -35 29 -36 34 -35 C28 -32 23 -29 19 -25 Z"></path>
+          <circle class="oeil" cx="23.5" cy="-22" r="2.6"></circle>
+          <circle class="oeil" cx="35" cy="-22" r="2.6"></circle>
+          <path class="sourire" d="M25 -17 C27.5 -14 31 -14 33.5 -17"></path>
+          <circle class="joue" cx="18" cy="-18" r="3"></circle>
+          <circle class="joue" cx="40.5" cy="-18" r="3"></circle>
+          <path class="antenne" d="M45 -37 C49 -41 51 -44 52 -47"></path>
+          <circle class="perle" cx="52.5" cy="-48" r="3.2"></circle>
+        </svg>
+      </div>
+    </div>
+  </section>
+</div>
+
+<footer>
+  <span data-i18n="pied.copyright">© 2026 [Prénom Nom], Montréal, Canada</span>
+  <span data-i18n="pied.fait">Fait main en HTML, CSS et JavaScript</span>
+  <!-- Quand le modèle Little-astronaut sera utilisé, décommenter (crédit obligatoire, licence CC BY 4.0, ne pas traduire) :
+  <span>Modèle 3D « Little-astronaut » par Shadow, <a href="https://skfb.ly/o9IE8">Sketchfab</a>, licence <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></span> -->
+</footer>
+
+<script src="script/i18n.js"></script>
+<script src="script/theme.js"></script>
+<script src="script/finale3d.js"></script>
+<script src="script/voyage.js"></script>
+</body>
+</html>

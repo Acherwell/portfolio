@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title data-i18n="jeu.titre">Développement de jeu vidéo, [Prénom Nom]</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Fjalla+One&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style/style.css">
+</head>
+<body>
+
+<div class="decor" id="decor" aria-hidden="true"></div>
+
+<nav class="nav" aria-label="Navigation principale" data-i18n-attr="aria-label:nav.aria">
+  <a class="nav-logo" href="../index.html">link<span>.</span>dev</a>
+  <div class="nav-liens">
+    <a href="../index.html#apropos" data-i18n="nav.apropos">/apropos</a>
+    <a href="../index.html#projets" data-i18n="nav.projets">/projets</a>
+    <a href="../index.html#parcours" data-i18n="nav.parcours">/parcours</a>
+    <a href="../index.html#contact" data-i18n="nav.contact">/contact</a>
+  </div>
+  <a class="btn-langue" id="btn-langue" href="?lang=en" hreflang="en" lang="en" aria-label="English version">EN</a>
+  <button class="btn-theme" id="btn-theme" type="button">Mode sombre</button>
+</nav>
+
+<main class="page">
+  <div class="contenu">
+    <a class="retour" href="../index.html#projets" data-i18n="page.retour">Retour aux projets</a>
+    <h1 data-i18n="jeu.h1">Développement de jeu vidéo</h1>
+    <p class="chapeau" data-i18n="jeu.chapeau">Développement de jeu vidéo, projet personnel en cours.</p>
+    <div class="page-image" data-i18n="jeu.capture">Capture ici : images/jeu.jpg, format 16:9</div>
+    <p data-i18n="jeu.p1">Je développe un jeu de stratégie en 2D. Le projet en est à ses débuts : je travaille actuellement sur le moteur de simulation qui fait vivre le monde.</p>
+    <p data-i18n="jeu.p2">Le principe que je me suis fixé est de construire du sol au plafond. Je pose une structure de données simple, je la teste, et je n'ajoute la couche suivante que si celle du dessous tient. Le système repose aujourd'hui sur trois niveaux qui se déduisent l'un de l'autre, ce qui rend les états incohérents impossibles à écrire.</p>
+    <p data-i18n="jeu.p3">Le comportement du jeu vit dans les données plutôt que dans le code : ajouter un nouvel élément au monde ne demande aucune modification de la logique. Cette contrainte m'oblige à séparer ce qui est règle générale de ce qui est cas particulier.</p>
+    <p class="meta" data-i18n="jeu.meta">Godot 4, GDScript. Projet en développement, plus de détails à venir.</p>
+  </div>
+</main>
+
+<footer>
+  <span data-i18n="pied.copyright">© 2026 [Prénom Nom], Montréal, Canada</span>
+  <span data-i18n="pied.fait">Fait main en HTML, CSS et JavaScript</span>
+</footer>
+
+<script src="../script/i18n.js"></script>
+<script src="../script/theme.js"></script>
+</body>
+</html>

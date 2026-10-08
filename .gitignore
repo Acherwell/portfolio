@@ -1,0 +1,27 @@
+# Configuration locale de Claude Code et des éditeurs
+.claude/
+.vscode/
+.idea/
+
+# Fichiers système
+Thumbs.db
+desktop.ini
+.DS_Store
+
+# Netlify CLI (cache et liaison locale du site)
+.netlify/
+
+# Secrets, au cas où un jour le site en utilise
+.env
+.env.*
+
+# Dépendances et journaux, si un outil est ajouté plus tard
+node_modules/
+*.log
+
+# Sources 3D de travail (on ne publie que les .glb)
+*.blend
+*.blend1
+
+# README du profil GitHub : il vit dans son propre depot (Acherwell/Acherwell)
+profil-github/
