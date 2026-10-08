@@ -28,3 +28,7 @@ profil-github/
 
 # Textes et images du profil LinkedIn (hors dépôt)
 profil-linkedin/
+
+# CV (coordonnées personnelles, hors dépôt)
+cv/
+CV_*.pdf
