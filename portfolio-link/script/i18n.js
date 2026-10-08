@@ -34,7 +34,18 @@
       'page.retour': 'Back to projects',
 
       /* Accueil */
-      'accueil.titre': 'Abraham Nangue-Otom, portfolio',
+      'accueil.titre': 'Abraham Nangue-Otom, computer and electronic systems student',
+      /* Descriptions pour les moteurs de recherche */
+      'accueil.desc': 'Portfolio of Abraham Nangue-Otom (Acherwell NOA), computer and electronic systems student at UQAM, Montréal: embedded systems, web applications, APIs and games.',
+      'ach.desc': 'Personal AI assistant built from scratch. A project by Abraham Nangue-Otom.',
+      'aess.desc': 'Website for the Association étudiante du secteur des sciences de l\'UQAM (AESS), the science students\' association, built as a volunteer. A project by Abraham Nangue-Otom.',
+      'anode.desc': 'REST API with a database and token authentication. A project by Abraham Nangue-Otom.',
+      'basket.desc': 'Two-player basketball arcade game, in the browser. A project by Abraham Nangue-Otom.',
+      'capi.desc': 'REST API that exposes data from embedded sensors. A project by Abraham Nangue-Otom.',
+      'jeu.desc': 'Personal video game project, in progress. A project by Abraham Nangue-Otom.',
+      'mon.desc': 'Simulated embedded system: data collection, alerts and a real-time web dashboard. A project by Abraham Nangue-Otom.',
+      'sf.desc': 'The café\'s website, live and used every day. A project by Abraham Nangue-Otom.',
+
       'hero.titre': 'From circuit<br>to pixel.',
       'hero.texte': 'I\'m Abraham Nangue-Otom. A computer and electronic systems student at UQAM, I build websites, games and an AI assistant from scratch.',
       'hero.voir': 'See the projects',
