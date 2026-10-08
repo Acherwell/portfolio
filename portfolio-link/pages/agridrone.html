@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title data-i18n="agri.titre">AgriDrone AI, Abraham Nangue-Otom</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Fjalla+One&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style/style.css">
+<meta name="description" content="Drone agricole autonome et logiciel d'analyse des cultures par imagerie RGB et thermique. Projet d'Abraham Nangue-Otom." data-i18n-attr="content:agri.desc">
+<meta name="author" content="Abraham Nangue-Otom">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Abraham Nangue-Otom">
+<meta property="og:title" content="AgriDrone AI, Abraham Nangue-Otom">
+<meta property="og:description" content="Drone agricole autonome et logiciel d'analyse des cultures par imagerie RGB et thermique. Projet d'Abraham Nangue-Otom.">
+<meta property="og:url" content="https://abrahamnangue-otom.com/pages/agridrone.html">
+<meta property="og:image" content="https://abrahamnangue-otom.com/images/partage.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="fr_CA">
+<meta property="og:locale:alternate" content="en_CA">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../favicon.ico" sizes="48x48">
+<link rel="icon" href="../images/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
+<link rel="alternate" hreflang="fr" href="https://abrahamnangue-otom.com/pages/agridrone.html?lang=fr">
+<link rel="alternate" hreflang="en" href="https://abrahamnangue-otom.com/pages/agridrone.html?lang=en">
+<link rel="alternate" hreflang="x-default" href="https://abrahamnangue-otom.com/pages/agridrone.html">
+</head>
+<body>
+
+<div class="decor" id="decor" aria-hidden="true"></div>
+
+<nav class="nav" aria-label="Navigation principale" data-i18n-attr="aria-label:nav.aria">
+  <a class="nav-logo" href="../index.html">link<span>.</span>dev</a>
+  <div class="nav-liens">
+    <a href="../index.html#apropos" data-i18n="nav.apropos">/apropos</a>
+    <a href="../index.html#projets" data-i18n="nav.projets">/projets</a>
+    <a href="../index.html#parcours" data-i18n="nav.parcours">/parcours</a>
+    <a href="../index.html#contact" data-i18n="nav.contact">/contact</a>
+  </div>
+  <a class="btn-langue" id="btn-langue" href="?lang=en" hreflang="en" lang="en" aria-label="English version">EN</a>
+  <button class="btn-theme" id="btn-theme" type="button">Mode sombre</button>
+</nav>
+
+<main class="page">
+  <div class="contenu">
+    <a class="retour" href="../index.html#projets" data-i18n="page.retour">Retour aux projets</a>
+    <h1 data-i18n="agri.h1">AgriDrone AI</h1>
+    <p class="chapeau" data-i18n="agri.chapeau">Drone agricole autonome et logiciel d'analyse des cultures par imagerie RGB et thermique.</p>
+    <p data-i18n="agri.p1">Projet d'équipe de trois étudiants à l'UQAM, de 2026-01 à 2026-05. J'ai conçu et développé l'ensemble du logiciel au sol : une application de bureau en C++ et Qt 6, environ 9 500 lignes, qui prépare les missions, suit le drone en vol et produit l'analyse des cultures.</p>
+    <p data-i18n="agri.p2">Missions : tracé de la parcelle sur une carte OpenStreetMap, puis génération automatique d'un trajet de balayage qui couvre tout le polygone, exporté vers l'autopilote ArduPilot. Télémétrie : un parseur MAVLink écrit à la main, compatible avec les versions 1 et 2 du protocole, et une liaison UDP maintenue en continu pour suivre la position du drone en temps réel.</p>
+    <p data-i18n="agri.p3">Analyse : les images RGB et thermiques sont récupérées depuis le Raspberry Pi embarqué, appariées par horodatage, puis évaluées par un modèle d'IA (MobileNetV3, entraîné par transfert d'apprentissage) et par des indices agronomiques reconnus. L'application génère un rapport PDF qui classe les zones de la parcelle par niveau de stress.</p>
+    <p data-i18n="agri.p4">Déploiement : un installeur Windows qui installe au besoin Python et les dépendances de l'IA, pour qu'un utilisateur sans connaissances techniques installe l'application en quelques clics.</p>
+    <p class="meta" data-i18n="agri.meta">C++17, Qt 6, CMake, MAVLink, Python, ONNX Runtime, Raspberry Pi 4, ArduPilot, OpenStreetMap, Inno Setup. Code non public.</p>
+  </div>
+</main>
+
+<footer>
+  <span data-i18n="pied.copyright">© 2026 Abraham Nangue-Otom, Montréal, Canada</span>
+  <span data-i18n="pied.fait">Fait main en HTML, CSS et JavaScript</span>
+</footer>
+
+<script src="../script/i18n.js"></script>
+<script src="../script/theme.js"></script>
+</body>
+</html>

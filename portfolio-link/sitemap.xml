@@ -126,4 +126,18 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://abrahamnangue-otom.com/pages/sain-fractal.html"/>
     <lastmod>2026-10-08</lastmod>
   </url>
+  <url>
+    <loc>https://abrahamnangue-otom.com/pages/agridrone.html?lang=fr</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://abrahamnangue-otom.com/pages/agridrone.html?lang=fr"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://abrahamnangue-otom.com/pages/agridrone.html?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://abrahamnangue-otom.com/pages/agridrone.html"/>
+    <lastmod>2026-10-08</lastmod>
+  </url>
+  <url>
+    <loc>https://abrahamnangue-otom.com/pages/agridrone.html?lang=en</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://abrahamnangue-otom.com/pages/agridrone.html?lang=fr"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://abrahamnangue-otom.com/pages/agridrone.html?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://abrahamnangue-otom.com/pages/agridrone.html"/>
+    <lastmod>2026-10-08</lastmod>
+  </url>
 </urlset>

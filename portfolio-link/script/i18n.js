@@ -116,6 +116,19 @@
       'aess.p2': 'I built an admin panel connected to a CMS, in French for the association\'s members, along with a dark mode. I also prepared and presented the project to the executive team before getting started.',
       'aess.meta': 'React, Vite, Tailwind CSS, Decap CMS.',
 
+      /* AgriDrone AI */
+      'projets.agri.desc': 'Autonomous agricultural drone: C++ and Qt ground software, MAVLink telemetry and AI crop analysis.',
+      'projets.agri.type': 'Team project, UQAM',
+      'agri.titre': 'AgriDrone AI, Abraham Nangue-Otom',
+      'agri.desc': 'Autonomous agricultural drone and crop analysis software using RGB and thermal imaging. A project by Abraham Nangue-Otom.',
+      'agri.h1': 'AgriDrone AI',
+      'agri.chapeau': 'Autonomous agricultural drone and crop analysis software using RGB and thermal imaging.',
+      'agri.p1': 'Team project of three students at UQAM, from 2026-01 to 2026-05. I designed and built the entire ground software: a C++ and Qt 6 desktop application, about 9,500 lines, that plans missions, tracks the drone in flight and produces the crop analysis.',
+      'agri.p2': 'Missions: the field is drawn on an OpenStreetMap map, then a sweep path covering the whole polygon is generated automatically and exported to the ArduPilot autopilot. Telemetry: a hand-written MAVLink parser supporting both versions 1 and 2 of the protocol, and a continuously maintained UDP link to track the drone position in real time.',
+      'agri.p3': 'Analysis: RGB and thermal images are retrieved from the onboard Raspberry Pi, matched by timestamp, then assessed by an AI model (MobileNetV3, trained by transfer learning) and by established agronomic indices. The application generates a PDF report that ranks the areas of the field by stress level.',
+      'agri.p4': 'Deployment: a Windows installer that installs Python and the AI dependencies when needed, so that a non-technical user can install the application in a few clicks.',
+      'agri.meta': 'C++17, Qt 6, CMake, MAVLink, Python, ONNX Runtime, Raspberry Pi 4, ArduPilot, OpenStreetMap, Inno Setup. Code not public.',
+
       /* Projets publiés sur GitHub */
       'page.code': 'Source code on GitHub',
       'projets.mon.nom': 'Sensor monitoring',
