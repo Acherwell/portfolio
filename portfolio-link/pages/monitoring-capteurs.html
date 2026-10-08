@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title data-i18n="jeu.titre">Développement de jeu vidéo, Abraham Nangue-Otom</title>
+<title data-i18n="mon.titre">Monitoring de capteurs, Abraham Nangue-Otom</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Fjalla+One&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../style/style.css">
@@ -27,12 +27,11 @@
 <main class="page">
   <div class="contenu">
     <a class="retour" href="../index.html#projets" data-i18n="page.retour">Retour aux projets</a>
-    <h1 data-i18n="jeu.h1">Développement de jeu vidéo</h1>
-    <p class="chapeau" data-i18n="jeu.chapeau">Développement de jeu vidéo, projet personnel en cours.</p>
-    <p data-i18n="jeu.p1">Je développe un jeu de stratégie en 2D. Le projet en est à ses débuts : je travaille actuellement sur le moteur de simulation qui fait vivre le monde.</p>
-    <p data-i18n="jeu.p2">Le principe que je me suis fixé est de construire du sol au plafond. Je pose une structure de données simple, je la teste, et je n'ajoute la couche suivante que si celle du dessous tient. Le système repose aujourd'hui sur trois niveaux qui se déduisent l'un de l'autre, ce qui rend les états incohérents impossibles à écrire.</p>
-    <p data-i18n="jeu.p3">Le comportement du jeu vit dans les données plutôt que dans le code : ajouter un nouvel élément au monde ne demande aucune modification de la logique. Cette contrainte m'oblige à séparer ce qui est règle générale de ce qui est cas particulier.</p>
-    <p class="meta" data-i18n="jeu.meta">Godot 4, GDScript. Projet en développement, plus de détails à venir.</p>
+    <h1 data-i18n="mon.h1">Monitoring de capteurs</h1>
+    <p class="chapeau" data-i18n="mon.chapeau">Système embarqué simulé : collecte, alertes et tableau de bord web en temps réel.</p>
+    <p data-i18n="mon.p1">Ce projet simule un système embarqué de type Raspberry Pi. Des capteurs de température et d'humidité produisent des mesures, enregistrées automatiquement dans un fichier CSV.</p>
+    <p data-i18n="mon.p2">Une interface web affiche les données en temps réel, avec un rafraîchissement toutes les 3 secondes et une page dédiée aux alertes. La collecte et le serveur web tournent en parallèle, dans deux fils d'exécution.</p>
+    <p class="meta"><span data-i18n="mon.meta">Python 3.12, Flask, threading, CSV.</span> <a href="https://github.com/Acherwell/monitoring-capteurs" data-i18n="page.code">Code source sur GitHub</a></p>
   </div>
 </main>
 

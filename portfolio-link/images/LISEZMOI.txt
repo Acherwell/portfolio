@@ -1,3 +1,3 @@
-Mets ta photo ici sous le nom link.jpg (format 4:5), puis remplace les deux <span> du cadre photo dans index.html par la balise img indiquee en commentaire.
+Mets ta photo ici sous le nom link.jpg (format 4:5), puis remplace le <span> "Photo à venir" du cadre photo dans index.html par la balise img indiquee en commentaire.
 
 Traductions : tout texte visible a un attribut data-i18n="cle" dans le HTML (texte francais) et la meme cle dans script/i18n.js (texte anglais). Quand tu modifies un texte, modifie les deux. Quand un emplacement [ENTRE CROCHETS] devient une vraie valeur non traduisible (courriel, URL), retire son attribut data-i18n.
