@@ -23,7 +23,7 @@ Portfolio personnel en français et en anglais, construit en HTML, CSS et JavaSc
 python -m http.server 8000 --directory portfolio-link
 ```
 
-Ouvre http://localhost:8000 dans ton navigateur. Un serveur local est nécessaire : certaines fonctions du navigateur ne marchent pas en `file://`.
+Ouvrir http://localhost:8000 dans un navigateur. Un serveur local est nécessaire : certaines fonctions du navigateur ne marchent pas en `file://`.
 
 ## Structure
 

@@ -1,5 +1,5 @@
 (function () {
-  /* Voyage : trace + vaisseau pilotes par le scroll */
+  /* Voyage : trace + vaisseau pilotés par le scroll */
   var SVG = 'http://www.w3.org/2000/svg';
   var voyage = document.getElementById('voyage');
   var carte = document.getElementById('carte');
@@ -92,7 +92,7 @@
     if (!segments.length) return;
     var vise = cibleY();
     if (yLisse === null) yLisse = vise;
-    /* interpolation : on avance d'une fraction de l'ecart a chaque image, d'ou le glissement */
+    /* interpolation : on avance d'une fraction de l'écart à chaque image, d'où le glissement */
     yLisse += (vise - yLisse) * 0.14;
     if (Math.abs(vise - yLisse) < 0.4) yLisse = vise;
     var y = yLisse;
@@ -132,7 +132,7 @@
     });
   }
 
-  /* Prepare les animations d'entree : masque sur les titres, delai en cascade sur le reste */
+  /* Prépare les animations d'entrée : masque sur les titres, délai en cascade sur le reste */
   function preparerAnimations() {
     etapes.forEach(function (etape) {
       var titres = etape.querySelectorAll('h1, h2');
@@ -152,7 +152,7 @@
   }
   preparerAnimations();
 
-  /* Relief : les elements s'inclinent legerement sous le pointeur */
+  /* Relief : les éléments s'inclinent légèrement sous le pointeur */
   var tactile = window.matchMedia('(hover: none)').matches;
   var doux = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   if (!tactile && !doux) {
@@ -169,8 +169,8 @@
     });
   }
 
-  /* Arrivee de l'astronaute dans la section contact. Rien n'est bloque :
-     le contact s'affiche comme les autres sections, l'astronaute arrive a cote. */
+  /* Arrivée de l'astronaute dans la section contact. Rien n'est bloqué :
+     le contact s'affiche comme les autres sections, l'astronaute arrive à côté. */
   var ancre = document.getElementById('bonhomme-ancre');
   var reduit = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var prechargee = false, arrivee = false;
@@ -195,7 +195,7 @@
     });
   }
 
-  /* Boucle permanente : le rendu suit sa propre cadence, independante des evenements de scroll */
+  /* Boucle permanente : le rendu suit sa propre cadence, indépendante des événements de scroll */
   var finPropulsion = null;
   function boucle() {
     mettreAJour();

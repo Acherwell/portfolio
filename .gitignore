@@ -1,4 +1,4 @@
-# Configuration locale de Claude Code et des éditeurs
+# Configuration locale des outils et des éditeurs
 .claude/
 .vscode/
 .idea/
@@ -23,5 +23,5 @@ node_modules/
 *.blend
 *.blend1
 
-# README du profil GitHub : il vit dans son propre depot (Acherwell/Acherwell)
+# README du profil GitHub : il vit dans son propre dépôt (Acherwell/Acherwell)
 profil-github/

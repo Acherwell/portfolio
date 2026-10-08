@@ -2,7 +2,7 @@
   var racine = document.documentElement;
   racine.classList.add('js');
 
-  /* Theme clair / sombre */
+  /* Thème clair / sombre */
   var btnTheme = document.getElementById('btn-theme');
   function themeActuel() {
     var t = racine.getAttribute('data-theme');
@@ -24,7 +24,7 @@
     try { localStorage.setItem('theme', t); } catch (e) {}
   });
 
-  /* Decor : positions fixes, pas de hasard, pour garder la meme composition a chaque visite */
+  /* Décor : positions fixes, pas de hasard, pour garder la même composition à chaque visite */
   var decor = document.getElementById('decor');
   if (decor) {
     var coucheLoin = document.createElement('div');

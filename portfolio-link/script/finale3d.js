@@ -155,7 +155,7 @@
     /* Renvoie une promesse, rejetée si la 3D ne peut pas jouer (repli 2D) */
     poser: function (ancre, toujoursVoulu) {
       return chargerThree().then(function (T) {
-        /* chargement trop lent : le repli 2D a deja pris la place, on ne double pas l'arrivee */
+        /* chargement trop lent : le repli 2D a déjà pris la place, on ne double pas l'arrivée */
         if (toujoursVoulu && !toujoursVoulu()) return;
         var toile = document.createElement('canvas');
         ancre.appendChild(toile);

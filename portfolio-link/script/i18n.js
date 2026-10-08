@@ -1,18 +1,18 @@
 /* Bilinguisme
-   Le francais est la langue source : il est ecrit dans le HTML et sert de repli.
-   Les autres langues vivent dans TEXTES, sous les cles des attributs data-i18n
-   (contenu de l'element) et data-i18n-attr="alt:cle;aria-label:cle" (attributs).
+   Le français est la langue source : il est écrit dans le HTML et sert de repli.
+   Les autres langues vivent dans TEXTES, sous les clés des attributs data-i18n
+   (contenu de l'élément) et data-i18n-attr="alt:cle;aria-label:cle" (attributs).
    Chaque langue a sa propre adresse (?lang=en), donc changer de langue recharge
-   la page : les animations d'entree se preparent une seule fois, sur le bon texte.
-   Ordre de priorite : ?lang= dans l'adresse, puis choix memorise, puis langue du
-   navigateur, puis francais. Ajouter une langue = l'ajouter a LANGUES et a TEXTES. */
+   la page : les animations d'entrée se préparent une seule fois, sur le bon texte.
+   Ordre de priorité : ?lang= dans l'adresse, puis choix mémorisé, puis langue du
+   navigateur, puis français. Ajouter une langue = l'ajouter à LANGUES et à TEXTES. */
 (function () {
   var SOURCE = 'fr';
   var LANGUES = ['fr', 'en'];
   var NOMS = { fr: 'Version française', en: 'English version' };
 
   var TEXTES = {
-    /* Pour le francais, seuls les textes generes par script : le reste est dans le HTML */
+    /* Pour le français, seuls les textes générés par script : le reste est dans le HTML */
     fr: {
       'ui.theme.sombre': 'Mode sombre',
       'ui.theme.clair': 'Mode clair'
@@ -21,7 +21,7 @@
       'ui.theme.sombre': 'Dark mode',
       'ui.theme.clair': 'Light mode',
 
-      /* Commun a toutes les pages */
+      /* Commun à toutes les pages */
       'nav.aria': 'Main navigation',
       'nav.apropos': '/about',
       'nav.projets': '/projects',
@@ -173,7 +173,7 @@
   }
   window.i18n = { langue: langue, t: t };
 
-  /* Remplacement du texte (le HTML porte deja le francais) */
+  /* Remplacement du texte (le HTML porte déjà le français) */
   if (langue !== SOURCE) {
     var dico = TEXTES[langue];
     Array.prototype.forEach.call(document.querySelectorAll('[data-i18n]'), function (el) {
@@ -195,7 +195,7 @@
 
   function adresse(l) { return location.pathname + '?lang=' + l + location.hash; }
 
-  /* Liens internes : on garde la langue d'une page a l'autre */
+  /* Liens internes : on garde la langue d'une page à l'autre */
   Array.prototype.forEach.call(document.querySelectorAll('a[href]'), function (a) {
     var href = a.getAttribute('href');
     if (/^[a-z]+:|^\/\/|^#/i.test(href) || !/\.html(#|$)/.test(href)) return;
@@ -203,7 +203,7 @@
     a.setAttribute('href', morceaux[0] + '?lang=' + langue + (morceaux[1] ? '#' + morceaux[1] : ''));
   });
 
-  /* Selecteur : un vrai lien vers l'autre langue, donc lisible par les moteurs */
+  /* Sélecteur : un vrai lien vers l'autre langue, donc lisible par les moteurs */
   var btn = document.getElementById('btn-langue');
   if (btn) {
     var cible = LANGUES[(LANGUES.indexOf(langue) + 1) % LANGUES.length];
