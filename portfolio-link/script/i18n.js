@@ -79,7 +79,7 @@
 
       'engagements.titre': 'Involvement',
       'engagements.sf.titre': 'Manager, Café Sain Fractal',
-      'engagements.sf.texte': 'Coordinating a volunteer-run student café at UQAM, and designing its website.',
+      'engagements.sf.texte': 'Coordinating a UQAM café run by and for students, and designing its website.',
       'engagements.aess.titre': 'Volunteer, AESS',
       'engagements.aess.texte': 'Designed and built the student association\'s website, presented to and delivered for the executive team.',
 
